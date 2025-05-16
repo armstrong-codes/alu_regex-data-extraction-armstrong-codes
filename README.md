@@ -29,7 +29,7 @@ cd alu_regex-data-extraction-armstrong-codes
 ### 2. Run the Code
 
 Make sure you have Python 3 installed. Then run:
-####python main.py
+- python main.py
 
 ## Sample Output
 
