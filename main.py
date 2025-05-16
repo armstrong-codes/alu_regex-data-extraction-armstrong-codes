@@ -1,7 +1,7 @@
 import re
 
 # Sample text simulating API response
-sample_text = """
+sample_text = "
 Contact us at user@example.com or firstname.lastname@company.co.uk.
 Visit https://www.example.com, http://site.org, or https://sub.example.org/page/.
 Call us at (123) 456-7890, 123-456-7890, 123.456.7890, or +1 800 555 1212.
@@ -10,7 +10,7 @@ The meeting is scheduled at 14:30 and 2:30 PM.
 Here is some HTML: <div class="box"><p>Hello!</p></div><img src="img.jpg" alt="img">
 Check out #regex, #Python3 and #ThisIsAHashtag for updates!
 Price: $19.99, $1,234.56 and $1000000.00.
-"""
+"
 
 # Regular Expressions (edge-aware)
 regex_patterns = {
