@@ -12,14 +12,14 @@ Check out #regex, #Python3 and #ThisIsAHashtag for updates!
 Price: $19.99, $1,234.56 and $1000000.00.
 """
 
-# Regular Expressions (edge-aware)
+# Correct Regular Expressions
 regex_patterns = {
     "emails": r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b",
     "urls": r"https?://[^\s,]+",
-    "phone_numbers": r"\+?\d{0,2}\s*\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}",
+    "phone_numbers": r"(\+?\d{1,2}[\s-])?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}",
     "credit_cards": r"\b(?:\d{4}[- ]?){3}\d{4}\b",
-    "times": r"\b(?:[01]?\d|2[0-3]):[0-5]\d(?:\s?[APMapm]{2})?\b",
-    "html_tags": r"</?[a-zA-Z][^>]*>",
+    "times": r"\b(?:[01]?\d|2[0-3]):[0-5]\d(?: ?[APMapm]{2})?\b",
+    "html_tags": r"</?[a-zA-Z]+[^>]*>",
     "hashtags": r"#\w+",
     "currency": r"\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?|\$\d+(?:\.\d{2})?"
 }
@@ -32,7 +32,7 @@ def extract_data(text, patterns):
         results[key] = matches
     return results
 
-# Extract and display
+# Display extracted results
 def display_results(results):
     for data_type, values in results.items():
         print(f"\n{data_type.upper()}:")
@@ -42,6 +42,7 @@ def display_results(results):
         else:
             print(" - No matches found.")
 
+# Main entry point
 if __name__ == "__main__":
     extracted_data = extract_data(sample_text, regex_patterns)
     display_results(extracted_data)
